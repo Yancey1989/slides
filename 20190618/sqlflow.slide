@@ -59,11 +59,9 @@ It extends the SQL syntax to enable model training and inference.
 
 * Custom SQLFlow models
 
-- repo: https://github.com/sql-machine-learning/models
-- Build && Update sqlflow_models:
-  1. git clone git@github.com:sql-machine-learning/models.git and add models defination.
-  1. Launch a SQLFlow Docker container and mount the models folder in the container: docker run -it -p 8888:8888 -v $PWD:/models sqlflow/sqlflow
-  1. Update sqlflow_models in the SQLFlow Docker container: docker exec <container_id> pip install /work
+- Clone sqlflow_models repo: git clone git@github.com:sql-machine-learning/models.git 
+- Launch a SQLFlow Docker container and mount the models folder in the container: docker run -it -p 8888:8888 -v $PWD:/models sqlflow/sqlflow
+- Install/update sqlflow_models in the SQLFlow Docker container: docker exec <container_id> pip install /work
 
 - Using your custom model in SQLFlow:
 .code custom_model.sql
