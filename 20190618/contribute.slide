@@ -1,0 +1,71 @@
+Contribute to SQLFlow
+18 June 2019
+
+Yan Xu
+Software Enginer, Ant Finatical
+yancey.yx@antfin.com
+https://sqlflow.org
+
+* SQLFlow Open Source Community
+
+- SQLFlow: SQLFlow gRPC server.
+- pysqlflow: SQLFlow client library for Python.
+- models: Premade models for SQLFlow.
+- gomaxcompute: A Go driver for Alibaba MaxCompute.
+- gohive: A Go driver for Hive.
+- sql-machine-learning.github.io: SQLFlow offical web site: https://sqlflow.org.
+
+* Open Source Community WorkFlow
+.image github-workflow.png _ 860
+
+- Demonstration: https://github.com/Yancey1989/github_demo
+  - create an issue && do some discussion.
+  - push a pull request.
+  - comment && update && LGTM!
+
+- Check Your Code Style
+  - Google Code Style: golang, python, ...
+  - pre-commit-hook: copyright, pylint, golint, ...
+
+* SQLFlow Overview
+SQLFlow is a bridge that connects a SQL engine
+
+- MySQL, Alibaba MaxCompute, Hive, ...
+
+with a ML engine
+
+- TensorFlow, XGboost, ...
+
+It extends the SQL syntax to enable model training and inference.
+
+* Syntax: Train
+.code train.sql
+
+* Syntax: Prediction
+.code pred.sql
+
+* The Architecture
+
+.image sqlflow-overview.png 570 _
+
+* The Architecture
+
+- Users input SQL statements in Jupyter Notebook
+- The Jupyter plug-in sends each statement to SQLFlow server
+- SQLFlow server proxies statements without using extended syntax to SQL engine
+- SQLFlow server translate each extended-syntax statement into a (Python) submitter program and runs it.
+- The submitter program runs SELECT on SQL engine and read results for training/prediction.
+- The submitter program TRAIN the MODEL in sqlflow-models.
+
+* Custom SQLFlow models
+
+- repo: https://github.com/sql-machine-learning/models
+- Build && Update sqlflow_models:
+  1. git clone git@github.com:sql-machine-learning/models.git and add models defination.
+  1. Launch a SQLFlow Docker container and mount the models folder in the container: docker run -it -p 8888:8888 -v $PWD:/models sqlflow/sqlflow
+  1. Update sqlflow_models in the SQLFlow Docker container: docker exec <container_id> pip install /work
+
+- Using your custom model in SQLFlow:
+.code custom_model.sql
+
+
