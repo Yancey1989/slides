@@ -11,18 +11,6 @@ https://github.com/sql-machine-learning
 
 .image sql-machine-learning-org.jpg 540 _
 
-* Open Source Community WorkFlow
-.image github-workflow.png _ 860
-
-- Demonstration: https://github.com/Yancey1989/github_demo
-  - create an issue && do some discussion.
-  - push a pull request.
-  - comment && update && LGTM!
-
-- Check Your Code Style
-  - Google Code Style: golang, python, ...
-  - pre-commit-hook: copyright, pylint, golint, ...
-
 * SQLFlow Overview
 SQLFlow is a bridge that connects a SQL engine
 
@@ -107,11 +95,25 @@ And this will generate feature column code like:
 
 .code feature_column_cross.pysample
 
-* Custom SQLFlow models
+* Open Source Community WorkFlow
+.image github-workflow.png _ 860
 
-- Clone sqlflow_models repo: git clone git@github.com:sql-machine-learning/models.git 
-- Launch a SQLFlow Docker container and mount the models folder in the container: docker run -it -p 8888:8888 -v $PWD:/models sqlflow/sqlflow
-- Install/update sqlflow_models in the SQLFlow Docker container: docker exec <container_id> pip install /work
+- Demonstration: https://github.com/Yancey1989/github_demo
+  - create an issue && do some discussion.
+  - push a pull request.
+  - comment && update && LGTM!
 
-- Using your custom model in SQLFlow:
+- Check Your Code Style
+  - Google Code Style: golang, python, ...
+  - pre-commit-hook: copyright, pylint, golint, ...
+
+* Contribute your SQLFlow models
+
+- Fork && Clone the sqlflow_models repo.
+.code clone_sqlflow_models.bashsample
+- Coding and test...
+- Test in SQLFlow Docker container.
+.code update_sqlflow_models.bashsample
+- Using your custom model in SQLFlow.
 .code custom_model.sql
+- Create a PR on Github!
