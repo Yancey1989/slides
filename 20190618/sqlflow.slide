@@ -95,10 +95,10 @@ And this will generate feature column code like:
 
 .code feature_column_cross.pysample
 
-* Open Source Community WorkFlow
+* Open Source Community WorkFlow [Demonstration]
 .image github-workflow.png _ 860
 
-- Demonstration: https://github.com/Yancey1989/github_demo
+- Demonstration repo: https://github.com/Yancey1989/github_demo
   - create an issue && do some discussion.
   - push a pull request.
   - comment && update && LGTM!
@@ -107,7 +107,7 @@ And this will generate feature column code like:
   - Google Code Style: golang, python, ...
   - pre-commit-hook: copyright, pylint, golint, ...
 
-* Contribute your SQLFlow models
+* Contribute your SQLFlow models [Demonstration]
 
 - Fork && Clone the sqlflow_models repo.
 .code clone_sqlflow_models.bashsample
